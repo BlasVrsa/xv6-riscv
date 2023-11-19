@@ -20,18 +20,13 @@ int getppid(void){
 int getancestor(int g) {
     struct proc *p = myproc();
     int pid = p->pid;
-    int count = 0;
-
-    while (p != 0 && count < g){
-        p = p->parent;
-        count = count + 1;
+    for (int i = 0; i < g; i++){
+        pid = getppid();
+        if(pid == -1){
+            return -1;
+        }
     }
 
-    if(p != 0) {
-        pid = p->pid;
-    } else {
-        pid = -1;
-    }
     return pid;
 } 
     
