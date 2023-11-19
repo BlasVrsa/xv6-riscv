@@ -4,6 +4,6 @@
 
 int main(int argc, char *argv[]){
     int pid = getppid();
-    printf("Father %l\n", pid);
+    printf("Father PID: %d\n", pid);
     return 0;
 }
