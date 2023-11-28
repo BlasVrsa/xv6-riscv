@@ -268,7 +268,7 @@ create(char *path, short type, short major, short minor)
   }
 
   ilock(ip);
-  ip->permission = 0;
+  ip->permission = 3;
   ip->major = major;
   ip->minor = minor;
   ip->nlink = 1;
@@ -519,12 +519,11 @@ sys_pipe(void)
 
 uint64
 sys_chmod(void){
-  char *path;
+  char path[MAXPATH];
   int mode;
   struct inode *ip;
-  int max = MAXPATH;
 
-  if(argstr(0, &path, max) < 0 || argint(1, &mode) <0){
+  if(argstr(0, path, sizeof(path)) < 0 || argint(1, &mode) <0){
     return -1;
   }
 
