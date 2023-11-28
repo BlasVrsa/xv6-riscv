@@ -27,14 +27,6 @@ main(int argc, char *argv[])
         printf("\nThis statement will not be printed\n");
         exit(0); 
   } 
-  //char arr[]={'1','2','3','4'};
-  //arr[0]='a';
-  /*printf(1,"\narr[0] = %d\n",arr[0]);
-  mprotect((void *)(((uint)arr/PGSIZE)*PGSIZE),1);
-  printf(1,"reched here \n");
-//  munprotect((void *)(((uint)arr/PGSIZE-1)*PGSIZE),1);
-  arr[0]='b';
-   printf(1,"\narr[0] = %d\n",arr[0]);
-  */ 
+
  return 0;
 }
